@@ -1,5 +1,5 @@
 {
-  "id": "pipeline",
+  "id": "conductor",
   "name": "Pipeline",
   "version": "0.1.0",
   "description": "n8n-style workflow engine with LLM self-healing. DAG execution, parallel branches, human-in-the-loop approvals, and automatic failure recovery.",
