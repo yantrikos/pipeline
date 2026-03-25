@@ -1,0 +1,25 @@
+{
+  "name": "pipeline",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "n8n-style workflow engine with LLM self-healing for OpenClaw agents",
+  "author": "Yantrikos",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": ["dist", "openclaw.plugin.json", "pipeline_engine", "hooks", "recipes", "README.md", "LICENSE"],
+  "repository": {"type": "git", "url": "git+https://github.com/yantrikos/pipeline.git"},
+  "homepage": "https://github.com/yantrikos/pipeline#readme",
+  "keywords": ["openclaw", "plugin", "workflow", "automation", "n8n", "self-healing", "dag"],
+  "openclaw": {
+    "id": "pipeline",
+    "build": {"openclawVersion": "2026.3.23", "pluginSdkVersion": "2026.3.23"},
+    "compat": {"pluginApi": ">=1.0.0", "builtWithOpenClawVersion": "2026.3.23", "pluginSdkVersion": "2026.3.23", "minGatewayVersion": "2026.3.23"},
+    "extensions": ["./dist/index.js"]
+  },
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --format=esm --outdir=dist --external:@openclaw/*",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {"esbuild": "^0.25.0", "typescript": "^5.7.0"}
+}

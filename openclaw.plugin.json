@@ -1,0 +1,15 @@
+{
+  "id": "pipeline",
+  "name": "Pipeline",
+  "version": "0.1.0",
+  "description": "n8n-style workflow engine with LLM self-healing. DAG execution, parallel branches, human-in-the-loop approvals, and automatic failure recovery.",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "dbPath": {"type": "string", "default": "./pipeline.db", "description": "Path to Pipeline SQLite database."},
+      "maxWorkers": {"type": "integer", "default": 20, "description": "Max concurrent node executions."},
+      "tickInterval": {"type": "number", "default": 1.0, "description": "Scheduler tick interval in seconds."}
+    }
+  }
+}
